@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Users">
+  <select id="selectAllUsers" resultType="com.uni.education.vo.UserVO">
+    select * from users
+  </select>
+  
+  <select id="selectByDynamic" resultType="com.uni.education.vo.UserVO">
+    select * from users
+    <where>
+    	<if test="uid != null and uid != ''">uid = #{uid}</if>
+    	<if test="pw != null ">AND pw = #{pw}</if>
+    	<if test="uname != null and uname != ''">AND uname = #{uname}</if>
+    	<if test="utype != null and utype != ''">AND utype = #{utype}</if>
+    	<if test="team != null and team != ''">AND team = #{team}</if>
+    	<if test="rank != null and rank != ''">AND rank = #{rank}</if>
+    	<if test="teacher != null and teacher != ''">AND teacher = #{teacher}</if>
+    	<if test="admin != null and admin != ''">AND admin = #{admin}</if>
+    </where>
+  </select>
+
+	<update id="updateDynamic" parameterType="com.uni.education.vo.UserVO">
+		UPDATE users
+		<set>
+			<if test="pw != null and pw != ''"> pw = #{pw}</if>
+			<if test="uname != null and uname != ''">, uname = #{uname}</if>
+			<if test="utype != null and utype != ''">, utype = #{utype}</if>
+			<if test="team != null and team != ''">, team = #{team}</if>
+			<if test="rank != null and rank != ''">, rank = #{rank}</if>
+			<if test="teacher != null and teacher != ''">, teacher = #{teacher}</if>
+			<if test="admin != null and admin != ''">, admin = #{admin}</if>
+		</set>
+		WHERE uid = #{uid}
+	</update>
+  
+  <insert id="insertDynamic" parameterType="com.uni.education.vo.UserVO">
+  	INSERT INTO users (uid
+  		<if test="pw != null and pw != ''">,pw</if>
+    	<if test="uname != null and uname != ''">,uname</if>
+    	<if test="utype != null and utype != ''">,utype</if>
+    	<if test="team != null and team != ''">,team</if>
+    	<if test="rank != null and rank != ''">,rank</if>
+    	<if test="teacher != null and teacher != ''">,teacher</if>
+    	<if test="admin != null and admin != ''">,admin</if>
+  	) VALUES ( #{uid}
+  		<if test="pw != null and pw != ''">,#{pw}</if>
+    	<if test="uname != null and uname != ''">,#{uname}</if>
+    	<if test="utype != null and utype != ''">,#{utype}</if>
+    	<if test="team != null and team != ''">,#{team}</if>
+    	<if test="rank != null and rank != ''">,#{rank}</if>
+    	<if test="teacher != null and teacher != ''">,#{teacher}</if>
+    	<if test="admin != null and admin != ''">,#{admin}</if>
+  	)
+  </insert>
+</mapper>
