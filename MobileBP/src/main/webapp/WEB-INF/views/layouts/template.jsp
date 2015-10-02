@@ -14,7 +14,7 @@
 <title>Sales GBP</title>
 
 <!-- Latest compiled and minified CSS -->
-<link href="<c:url value='/css/template-docs.css'/>" rel="stylesheet">
+<!-- test <link href="<c:url value='/css/template-docs.css'/>" rel="stylesheet">  -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">

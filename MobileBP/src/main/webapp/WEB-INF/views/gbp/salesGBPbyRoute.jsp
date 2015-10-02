@@ -23,15 +23,17 @@
 	
 	function eventLeftSwipe() {
 		//$("#grid").submit();
-		$.post("salesGBP", { week: "38", diff: "1" })
+		$.get("salesGBP", { week: "38", diff: "1" })
 	}
 </script>
 <div>
 	<h3>by Route ${week}</h3>
 	
-	<form class="form-inline" id="grid" name="grid" method="post" action="">
+	<form class="form-inline" id="grid" name="grid" method="post" action="salesGBP">
+		<input type="submit" method="GET" value="test submit" />
 		<table class="table table-hover">
-			<input type="hidden" name="week" value="test" />
+			<input type="hidden" name="week" value="20" />
+			<input type="hidden" name="diff" value="1" />
 			<tr>
 	            <td>Trade</td>
 				<td>Bound</td>

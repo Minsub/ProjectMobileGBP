@@ -52,7 +52,7 @@ public class SalesGBPController {
 			}
         }
 		
-        return "gbp/salesGBP";
+        return "gbp/salesGBPbyRoute";
     }
 
 	@RequestMapping(method = RequestMethod.POST)
@@ -62,9 +62,9 @@ public class SalesGBPController {
 	        
 			model.addAttribute("week", week);
 			model.addAttribute("diff", diff);
-			 return "redirect:salesGBP";
+			 return "redirect:/gbp/salesGBP";
 		} catch (Exception e) {
-			 return "redirect:salesGBP";
+			 return "redirect:/gbp/salesGBP";
 		}
     }
 }
