@@ -1,54 +1,39 @@
 /*iPhone6 portrait*/
-@media screen and (max-width : 375px) {
+@media screen and (max-width: 400px) {
    .col_wk1 {
        display: table-cell;
    }
    .col_wk2,
-    col_wk3,
-    col_wk4 {
-       display: none;
-   }
-}
-
-/*iPhone6 landscape*/
-@media screen and (min-width : 375px) 
-              and (max-width : 1000px){
-   .col_wk1,
-    col_wk2 {
-       display: table-cell;
-   }
    .col_wk3,
-    col_wk4 {
-       display: none;
-   }
-}
-
-
-
-/*iPad landscape*/
-@media screen and (min-device-width : 768px)
-            and (max-device-width : 1024px)
-            and (orientation : landscape) {
-   .col_wk1,
-    col_wk2,
-    col_wk3,
-    col_wk4 {
-       display: table-cell;
-   }
-}
-
-/*iPad portrait*/
-@media screen and (min-device-width : 768px)
-              and (max-device-width : 1024px) {
-   .col_wk1,
-    col_wk2,
-    col_wk3 {
-       display: table-cell;
-   }
    .col_wk4 {
        display: none;
    }
 }
+
+
+/*iPhone6 landscape*/
+@media screen and (min-width: 401px) {
+   .col_wk1,
+   .col_wk2 {
+       display: table-cell;
+   }
+   .col_wk3,
+   .col_wk4 {
+       display: none;
+   }
+}
+
+/*iPad portrait*/
+@media screen and (min-width: 851px) {
+   .col_wk1,
+   .col_wk2,
+   .col_wk3,
+   .col_wk4 {
+       display: table-cell;
+   }
+}
+
+
 
 .head_week {
     text-align: center;
