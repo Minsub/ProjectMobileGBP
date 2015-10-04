@@ -12,18 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.uni.cntr.gbp.service.SalesGBPService;
+import com.uni.cntr.gbp.util.Utils;
 import com.uni.cntr.gbp.vo.SalesGBPVO;
-import com.uni.education.service.UserService;
-import com.uni.education.vo.LectureUserVO;
-import com.uni.education.vo.RegistrationLectureVO;
-import com.uni.education.vo.UserVO;
 
 
 @Controller
 @RequestMapping(value="/gbp/salesGBP")
 public class SalesGBPController {
-	private final static String DEFAULT_SALES = "0123";
-	
 	private static Logger logger = Logger.getLogger(SalesGBPController.class);
 	
 	@Autowired
@@ -31,26 +26,33 @@ public class SalesGBPController {
 	
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm(String week, Integer diff, Model model, HttpSession session) {
-        logger.info("Call SalesGBP GET week" + week + ", diff: " + diff);
+        logger.info("Call SalesGBP GET week:" + week + ", diff: " + diff);
         
         List<SalesGBPVO> list = null;
-        if (week == null) {
-        	list = salesGBPService.getAll(DEFAULT_SALES);
-    		logger.info("result from DB / size:" + list.size());   
-    		model.addAttribute("items", list);
-    		model.addAttribute("week", "Week38");
-    		
-        } else {
-        	list = salesGBPService.getAll(DEFAULT_SALES, week, diff);
-			logger.info("result from DB / size:" + list.size());   
-			model.addAttribute("items", list);
-			
-			if (list.size() > 0) {
-				model.addAttribute("week", "week" + list.get(0).getWeek());
-			} else {
-				model.addAttribute("week", "-");
-			}
+        String sSales = (String)session.getAttribute("sales");
+        if (sSales == null || sSales.equalsIgnoreCase("")) {
+        	session.setAttribute("sales", Utils.getDefaultSales());
+        	sSales = Utils.getDefaultSales();
         }
+        
+        if (week == null) {
+        	list = salesGBPService.getAll(sSales);
+        } else {
+        	list = salesGBPService.getAll(sSales, week, diff);
+		}
+        
+        logger.info("result from DB / size:" + list.size());   
+		model.addAttribute("items", list);
+		
+        if (list.size() > 0) {
+			model.addAttribute("week1", list.get(0).getWeek1());
+			model.addAttribute("week2", list.get(0).getWeek2());
+			model.addAttribute("week3", list.get(0).getWeek3());
+		} else {
+			model.addAttribute("week1", 0);
+			model.addAttribute("week2", 0);
+			model.addAttribute("week3", 0);
+		}
 		
         return "gbp/salesGBPbyRoute";
     }

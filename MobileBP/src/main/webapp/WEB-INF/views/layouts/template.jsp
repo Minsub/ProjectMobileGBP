@@ -15,24 +15,28 @@
 
 <!-- Latest compiled and minified CSS -->
 <!-- test <link href="<c:url value='/css/template-docs.css'/>" rel="stylesheet">  -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">  -->
+<link href="<c:url value='/css/bootstrap.css'/>" rel="stylesheet">
+
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link href="<c:url value='/css/tableView.css'/>" rel="stylesheet">
 
-<!-- <link href="<c:url value='/css/bootstrap-responsive.css'/>" rel="stylesheet">  -->
 <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />  -->
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+<script src="<c:url value='/js/jquery.mobile.custom.js'/>"></script>
 
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>  -->
+<!--  
 <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+-->  
 
 <script language="javascript">
 $(function(){
-    $("#mainBody").bind("swipeleft", function(){
+	$("#mainBody").bind("swipeleft", function(){
     	eventLeftSwipe();
     });
     $("#mainBody").bind("swiperight", function(){
@@ -84,7 +88,7 @@ function showDiv() {
 	
 	<div id="mainBody" class="container bs-docs-container">
 		<div class="row">
-			<div class="col-xs-10" role="main">
+			<div class="col-xs-12" role="main">
 				<div id="body">
 					<tiles:insertAttribute name="body" />
 				</div>
