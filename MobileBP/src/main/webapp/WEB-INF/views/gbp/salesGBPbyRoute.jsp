@@ -17,8 +17,7 @@
 <div>
 	<h3>by Route ${week}</h3>
 	
-	<form class="form-inline" id="grid" id="grid" method="post" action="salesGBP">
-		<input type="submit" method="GET" value="test submit" />
+	<form class="form-inline" id="grid" id="grid" method="GET" action="salesGBP">
 		<table class="table table-hover">
 			<input type="hidden" name="week" value="${week1}" />
 			<input type="hidden" id="diff" name="diff" value="1" />
@@ -49,7 +48,7 @@
 	            <tr>
 	            	<td> <c:out value="${item.trade}" /></td>
 	            	<td> <c:out value="${item.bound}" /></td>
-	                <td> <a href="/cntr/gbp/salesGBPbyAcc?trade=<c:out value="${item.trade}"/>&bound=<c:out value="${item.bound}"/>&route=<c:out value="${item.route}"/>"><c:out value="${item.route}" /></a></td>
+	                <td> <a href="/cntr/gbp/salesGBPbyAcc?trade=<c:out value="${item.trade}"/>&bound=<c:out value="${item.bound}"/>&route=<c:out value="${item.route}"/>&week=<c:out value="${week1}"/>"><c:out value="${item.route}" /></a></td>
 	                <!-- week1 --> 
 	                <td class="col_wk1 col_allo"> <c:out value="${item.wk1_alo}" /></td> 
 	                <td class="col_wk1 col_bkg"> <c:out value="${item.wk1_bkg}" /></td> 

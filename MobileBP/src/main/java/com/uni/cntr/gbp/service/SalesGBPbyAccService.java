@@ -14,8 +14,8 @@ public class SalesGBPbyAccService {
 	@Autowired
 	private SalesGBPbyAccDao salesGBPbyAccDao;
 	
-	public List<SalesGBPbyAccVO> getAll(String sales, String trade, String bound, String route, String week) {
-		return salesGBPbyAccDao.getAll(sales, trade, bound, route, week);
+	public List<SalesGBPbyAccVO> getAll(String sales, String trade, String bound, String route, String week, int diff) {
+		return salesGBPbyAccDao.getAll(sales, trade, bound, route, week, diff);
 	}
 
 } 

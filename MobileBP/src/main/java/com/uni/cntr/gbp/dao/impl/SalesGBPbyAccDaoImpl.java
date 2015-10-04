@@ -13,18 +13,27 @@ import com.uni.cntr.gbp.vo.SalesGBPbyAccVO;
 public class SalesGBPbyAccDaoImpl implements SalesGBPbyAccDao {
 
 	@Override
-	public List<SalesGBPbyAccVO> getAll(String sales, String trade, String bound, String route, String week) {
+	public List<SalesGBPbyAccVO> getAll(String sales, String trade, String bound, String route, String week, int diff) {
+		
+		
+		return generate(week, diff);
+	}
+
+	private List<SalesGBPbyAccVO> generate(String week, int diff) {
 		List<SalesGBPbyAccVO> list = new ArrayList<SalesGBPbyAccVO>();
 		
-		list.add(Utils.generateGBPbyAccVO());
-		list.add(Utils.generateGBPbyAccVO());
-		list.add(Utils.generateGBPbyAccVO());
-		list.add(Utils.generateGBPbyAccVO());
-		list.add(Utils.generateGBPbyAccVO());
-		list.add(Utils.generateGBPbyAccVO());
-		list.add(Utils.generateGBPbyAccVO());
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
+		list.add(Utils.generateGBPbyAccVO(week, diff));
 		
 		return list;
 	}
-
 }

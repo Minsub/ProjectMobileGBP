@@ -4,14 +4,27 @@
 
 <script type="text/javascript">
 	function eventLeftSwipe() {
-		//$("#grid").submit();
-		//$.get("salesGBP", { week: "38", diff: "1" })
+		document.getElementById("diff").value = "1";
+		document.getElementById("grid").submit();
+	}
+	function eventRightSwipe() {
+		document.getElementById("diff").value = "-1";
+		document.getElementById("grid").submit();
+		
 	}
 </script>
 <div>
 	<h3>byAccount (${trade}/${bound}/${route})</h3>
 	
-	<form class="form-inline" id="grid" name="grid" method="post" action="salesGBP">
+	<form class="form-inline" id="grid" method="GET" action="salesGBPbyAcc">
+		<!-- input parameter -->
+		<input type="hidden" name="week" value="${week1}" />
+		<input type="hidden" id="diff" name="diff" value="1" />
+		<input type="hidden" name="trade" value="${trade}" />
+		<input type="hidden" name="bound" value="${bound}" />
+		<input type="hidden" name="route" value="${route}" />
+		
+		
 		<table class="table table-hover">
 			<tr>
 	            <th class="head_week" colspan="2" >Account</th>

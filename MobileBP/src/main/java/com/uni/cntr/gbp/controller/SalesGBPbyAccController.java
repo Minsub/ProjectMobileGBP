@@ -25,8 +25,8 @@ public class SalesGBPbyAccController {
 	private SalesGBPbyAccService salesGBPbyAccService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(String trade, String bound, String route, String week, Model model, HttpSession session) {
-        logger.info("Call salesGBPbyAcc GET route" + route + ", week: " + week);
+    public String setupForm(String trade, String bound, String route, String week, Integer diff, Model model, HttpSession session) {
+        logger.info("Call salesGBPbyAcc GET trade " + trade + " bound: " + bound + " route" + route + ", week: " + week + " diff: " + diff);
         
         String sSales = (String)session.getAttribute("sales");
         if (sSales == null || sSales.equalsIgnoreCase("")) {
@@ -34,9 +34,13 @@ public class SalesGBPbyAccController {
         	sSales = Utils.getDefaultSales();
         }
         
+        if (diff == null) {
+        	diff = 0;
+        }
+        
         List<SalesGBPbyAccVO> list = null;
         
-    	list = salesGBPbyAccService.getAll(sSales, trade, bound, route, week);
+    	list = salesGBPbyAccService.getAll(sSales, trade, bound, route, week, diff);
 		logger.info("result from DB / size:" + list.size());   
 		model.addAttribute("items", list);
 		model.addAttribute("trade", trade);

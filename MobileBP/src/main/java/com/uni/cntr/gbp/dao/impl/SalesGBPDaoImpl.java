@@ -14,31 +14,35 @@ public class SalesGBPDaoImpl implements SalesGBPDao {
 
 	@Override
 	public List<SalesGBPVO> getAll(String sales) {
-		List<SalesGBPVO> list = new ArrayList<SalesGBPVO>();
-		
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		
-		return list;
+		return generate("201521", 0);
 	}
 
 	@Override
 	public List<SalesGBPVO> getAll(String sales, String week, int diff) {
+		
+		return generate(week, diff);
+	}	
+	
+	private List<SalesGBPVO> generate(String week, int diff) {
 		List<SalesGBPVO> list = new ArrayList<SalesGBPVO>();
 		
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
-		list.add(Utils.generateGBPVO());
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
+		list.add(Utils.generateGBPVO(week, diff));
 		
 		return list;
-	}	
+	}
 
 }
