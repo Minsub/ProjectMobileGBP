@@ -29,6 +29,10 @@ public class SalesGBPController {
         logger.info("Call SalesGBP GET week:" + week + ", diff: " + diff);
         
         List<SalesGBPVO> list = null;
+        
+        //test
+        //session.setAttribute("sales", Utils.getDefaultSales());
+        
         String sSales = (String)session.getAttribute("sales");
         if (sSales == null || sSales.equalsIgnoreCase("")) {
         	session.setAttribute("sales", Utils.getDefaultSales());

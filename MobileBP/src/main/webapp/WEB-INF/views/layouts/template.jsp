@@ -74,7 +74,7 @@ function showDiv() {
 					<li><a href="/cntr/gbp">KPI</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Ji Minsub (0123)</a>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Oh, ChangHwan (5294)</a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Change Info.</a></li>
 							<li><a href="/cntr/logout">Logout</a></li>
@@ -85,7 +85,7 @@ function showDiv() {
 			
 		</div>
 	</header>
-	
+ 
 	<div id="mainBody" class="container bs-docs-container">
 		<div class="row">
 			<div class="col-xs-12" role="main">
@@ -95,7 +95,7 @@ function showDiv() {
 			</div>
 		</div>
 	</div>
-
+	 
 </div>
 
 

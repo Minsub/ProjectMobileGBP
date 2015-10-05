@@ -4,10 +4,10 @@ import com.uni.cntr.gbp.vo.SalesGBPVO;
 import com.uni.cntr.gbp.vo.SalesGBPbyAccVO;
 
 public class Utils {
-	private final static String DEFAULT_SALES = "0123";
+	private final static String DEFAULT_SALES_CODE = "5294";
 	
 	public static String getDefaultSales() {
-		return DEFAULT_SALES;
+		return "5294";
 	}
 	
 	public static SalesGBPbyAccVO generateGBPbyAccVO(String week, int diff) {

@@ -33,8 +33,8 @@
 				<th class="head_week col_wk3" colspan="2" >${week3}</th>
 	        </tr> 
 			<tr>
-				<th>Code</th>
-				<th>Description</th>
+				<th >Code</th>
+				<th >Description</th>
 				<!-- Week1 -->
 				<th class="col_wk1">BKG</th>
 				<th class="col_wk1">BP</th>
@@ -48,7 +48,7 @@
 			<c:forEach var="item" items="${items}">
 	            <tr>
 	            	<td> <c:out value="${item.acc}" /></td>
-	            	<td> <c:out value="${item.desc}" /></td>
+	            	<td font-size="12px"> <c:out value="${item.desc}" /></td>
 	                <!-- week1 --> 
 	                <td class="col_wk1 col_bkg"> <c:out value="${item.wk1_bkg}" /></td> 
 	                <td class="col_wk1 col_bp"> <c:out value="${item.wk1_bp}" /></td> 
